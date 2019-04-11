@@ -1,0 +1,23 @@
+Cross-Site Scripting (XSS)
+Cross-Site Scripting (‘XSS’ or ‘CSS’) exploit vulnerabilities in dynamically generated web pages, which enables malicious attackers to inject client - script into web pages viewed by other users. It occurs when invalidated input data is included in dynamic content that is send to a user’s web browser for rendering. Attackers inject malicious JavaScript, ActiveX, HTML, or Flash for execution on a victim’s system by hiding it within the legitimate requests 
+
+
+
+
+
+The consequences of malicious JavaScript
+Among many other things, the ability to execute arbitrary JavaScript in another user's browser allows an attacker to perform the following types of attacks:
+Cookie theft
+The attacker can access the victim's cookies associated with the website using document.cookie, send them to his own server, and use them to extract sensitive information like session IDs.
+Keylogging
+The attacker can register a keyboard event listener using addEventListener and then send all of the user's keystrokes to his own server, potentially recording sensitive information such as passwords and credit card numbers.
+Phishing
+The attacker can insert a fake login form into the page using DOM manipulation, set the form's action attribute to target his own server, and then trick the user into submitting sensitive information.
+
+https://excess-xss.com/
+
+Types of XSS
+While the goal of an XSS attack is always to execute malicious JavaScript in the victim's browser, there are few fundamentally different ways of achieving that goal. XSS attacks are often divided into three types:
+Persistent XSS, where the malicious string originates from the website's database.
+Reflected XSS, where the malicious string originates from the victim's request.
+DOM-based XSS, where the vulnerability is in the client-side code rather than the server-side code.
