@@ -1,0 +1,27 @@
+Methods of preventing XSS
+Encoding, which escapes the user input so that the browser interprets it only as data, not as code.
+Validation, which filters the user input so that the browser interprets it as code without malicious commands.
+Encoding
+Encoding is the act of escaping user input so that the browser interprets it only as data, not as code. The most recognizable type of encoding in web development is HTML escaping, which converts characters like < and > into &lt; and &gt;, respectively.
+When performing encoding in your client-side code, the language used is always JavaScript, which has built-in functions that encode data for different contexts.
+
+When performing encoding in your server-side code, you rely on the functions available in your server-side language or framework. As there are large number of languages and frameworks available, familiarity with the encoding functions used on the client-side in JavaScript is useful when writing server-side code as well. 
+Validation
+Input Validation is any web application’s first line of defense.Validation is the act of filtering user input so that all malicious parts of it are removed, without necessarily removing all code in it. One of the most recognizable types of validation in web development is allowing some HTML elements (such as <em> and <strong>) but disallowing others (such as <script>).
+validation works best by preventing XSS attacks on data which has inherent value limits. An integer, for example, should never contain HTML special characters. An option, such as a country name, should match a list of allowed countries which likewise will prevent XSS payloads from being injected.
+
+
+
+
+
+Input Validation
+That said, Input Validation is limited to knowing what the immediate usage of an untrusted input is and cannot predict where that input will finally be used when included in output. Practically all free text falls into this category since we always need to allow for valid uses of quotes, angular brackets and other characters.
+Therefore, validation works best by preventing XSS attacks on data which has inherent value limits. An integer, for example, should never contain HTML special characters. An option, such as a country name, should match a list of allowed countries which likewise will prevent XSS payloads from being injected.
+Input Validation can also check data with clear syntax constraints. For example, a valid URL should start with http:// or https:// but not the far more dangerous javascript: or data: schemes. In fact, all URLs derived from untrusted input must be validated for this very reason. Escaping a javascript: or data: URI has the same effect as escaping a valid URL, i.e. nothing whatsoever.
+While Input Validation won’t block all XSS payloads, it can help block the most obvious. We cover Input Validation in greater detail in Chapter 2.
+Escaping (also Encoding)
+Escaping data on output is a method of ensuring that the data cannot be misinterpreted by the currently running parser or interpreter. The obvious examples are the less-than and greater-than sign that denote element tags in HTML. If we allowed these to be inserted by untrusted input as-is, it would allow an attacker to introduce new tags that the browser would render. As a result, we normally escape these using the &gt; and $lt; HTML named entities.
+As the replacement of such special characters suggests, the intent is to preserve the meaning of the data being escaped. Escaping simply replaces characters with special meaning to the interpreter with an alternative which is usually based on a hexadecimal representation of the character or a more readable representation, such as HTML named entities, where it is safe to do so.
+As my earlier diversion into explaining Context mentioned, the method of escaping varies depending on which Content data is being injected into. HTML escaping is different from Javascript escaping which is also different from URL escaping. Applying the wrong escaping strategy to a Context can result in an escaping failure, opening a hole in a web applications defenses which an attacker may be able to take advantage of.
+To facilitate Context-specific escaping, it’s recommended to use a class designed with this purpose in mind. PHP does not supply all the necessary escaping functionality out of the box and some of what it does offer is not as safe as popularly believed. You can find an Escaper class which I designed for the Zend Framework, which offers a more approachable solution, here.
+Let’s examine the escaping rules applicable to the most common Contexts: HTML Body, HTML Attribute, Javascript, URL and CSS.aries or their usage which can also be targeted.
