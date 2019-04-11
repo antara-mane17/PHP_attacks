@@ -1,0 +1,15 @@
+What are injection attacks?
+Injection attack is one of the major problems in web security. It is listed as the number-one web application security risk in the OWASP Top 10 — and for good reason. Injection attacks, particularly SQL injection (SQLi) and Cross-site Scripting (XSS), are not only very dangerous, but they are also very widespread, especially in legacy applications.
+Injection attacks refer to a broad category of attack vectors that enables the attacker to provide untrusted input to a program, that gets processed by an interpreter as a part of a command or query that alters the course of execution of that program. Injection attack leads to information thievery, data loss, loss of data integrity, denial of service, also as full system compromise.
+
+According to IBM X-Force analysis of IBM Managed Security Services (MSS) data, injection attacks are the most frequently employed mechanism of attack against organizational networks. For the period of January 2016 to June 2017, injection attacks made up nearly half of all the attacks (around 47%).
+Attackers target injection vulnerabilities in OSs and applications to penetrate essential web servers and access back-end databases. From exploiting malicious web shells to planting mining tools for cryptocurrency or malicious PHP scripts, there are many ways in which cyber-criminals can use injection attacks to succeed in their goal.
+What makes injection attacks particularly scary is that their attack surface is enormous (especially for SQLi and XSS). Furthermore, Injection attacks are a very well understood vulnerability class, meaning that there are countless freely available and reliable tools that allow even inexperienced attackers to abuse these vulnerabilities automatically.
+
+
+
+
+
+
+
+
