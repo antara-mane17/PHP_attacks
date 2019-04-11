@@ -1,0 +1,23 @@
+XML injection Attack:
+XML Injection is an attack technique used to manipulate or compromise the logic of an XML application or service. The injection of unintended XML content and/or structures into an XML message can alter the intend logic of the application. Further, XML injection can cause the insertion of malicious content into the resulting message/document.
+A user who has the ability to provide input string data that is incorporated into an XML document can inject XML tags. These tags are interpreted by the XML parser and may cause data to be overridden.
+
+An XML parser may interpret the XML in this example such that the second price field overrides the first, changing the price of the item to $1. Alternatively, the attacker may be able to inject special characters, such as comment blocks, which corrupt the meaning of the XML.
+PROTECTION:
+Input Validation:
+Depending on the specific data and command interpreter or parser to which data is being sent, appropriate methods must be used to sanitize untrusted user input.
+       2) XML Schema:
+A more general mechanism for checking XML for attempted injection is to validate it using a Document Type Definition (DTD) or schema. The schema must be rigidly defined to prevent injections from being mistaken for valid XML.
+XML parsers with bugs, or that are misconfigured and hence vulnerable to manipulation, are generally susceptible to two kinds of attacks.
+ ● XML Bombs: The XML parser may crash or execute incorrectly given certain input data, resulting in a Denial of Service attack.
+ ● XXE Disclosure: The XML parser may inadvertently leak sensitive information.
+XML Bombs:
+An XML Bomb is designed so as to cause the application processing its output, to hang or crash executing.
+E.g. consider the Billion Laughs Attack that consists of a short XML file that manages to expand under XML parsing into some 3 gigabytes of data. The large resultant data typically crashes any application, and it is easy to see how the data size could be scaled arbitrarily larger.
+https://research.cs.wisc.edu/mist/SoftwareSecurityCourse/Chapters/3_8_4-XML-Injections.pdf
+XXE (XML External Entity) Disclosure:
+By providing an XML input containing a reference to an external entity an attacker can cause the XML parser to read the referenced data and process it into the resultant XML data.
+E.g. If there is a pathway to expose the resulting data the attacker can manage to exfiltrate the data by exploiting the access privileges of the XML parser process. Alternatively, by referencing a very large data source this can also lead to Denial of Service. 
+
+
+configure the XML application to disable inline expansion of entities. Without inline expansion the geometric size increase is not available to the attacker and these attacks will be rendered harmless
