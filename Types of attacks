@@ -1,0 +1,48 @@
+Types of injection attacks
+https://www.linkedin.com/pulse/types-injection-attacks-ria-pramanik
+Refer CSH Ppt and OWASP ppt.
+
+
+-Injection attack 
+-Descriptions 
+-Potential impact
+ 1) Code injection 
+-Injects application code which can execute operating system commands as the user running the web application. Advanced attacks can make use of privilege escalation vulnerabilities to gain even higher privileges if necessary, which may lead to full system compromise. 
+-Full system compromise 
+2) CRLF injection 
+-Injects an unexpected CRLF (Carriage Return and Line Feed) character sequence used to split an HTTP response header and write arbitrary contents to the response body, including Cross-site Scripting (XSS). 
+-Cross-site Scripting (XSS) 
+3) Cross-site Scripting (XSS) 
+-Injects arbitrary JavaScript into a legitimate website or web application which is then executed inside a victim’s browser.
+Account impersonation
+Defacement
+Run arbitrary JavaScript in the victim’s browser
+4)Email (Mail command/SMTP) injection 
+-Injects IMAP/SMTP statements to a mail server that is not directly available via a web application.
+Spam relay
+Information disclosure
+5)Host header injection
+- Abuses the implicit trust of the HTTP Host Header to poison password-reset functionality and poison web caches.
+Password-reset poisoning
+Cache poisoning
+6)LDAP injection 
+-Injects LDAP (Lightweight Directory Access Protocol) statements to execute arbitrary LDAP commands including granting permissions and modifying the contents of an LDAP tree.
+Authentication bypass
+Privilege escalation
+Information disclosure
+7)OS Command injection 
+-Injects operating system commands as the user running the web application. Advanced variations of this attack can leverage privilege escalation vulnerabilities which may lead to full system compromise. 
+-Full system compromise 
+8)SQL injection (SQLi) -
+Injects SQL commands that can read or modify data from a database. Advanced variations of this attack can be used to write arbitrary files to the server and even execute OS commands which may lead to full system compromise.
+Authentication bypass
+Information disclosure
+Data loss
+Data theft
+Loss of data integrity
+Denial of service
+Full system compromise.
+10)XPath injection 
+-Inject data into an application to execute crafted XPath queries which can be used to access unauthorized data and bypass authentication.
+Information disclosure
+Authentication bypass
