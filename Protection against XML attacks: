@@ -1,0 +1,8 @@
+Protection against XML attacks:
+For XML Bombs:
+The best way to avoid XML Bombs is for the application to For XXE:
+The simplest way to prevent XXE attacks is to configure the XML parser to avoid resolving external references entirely. 
+Of course, XML external entities can be useful or even essential, in which case completely disabling the feature is not an acceptable solution. In these cases consider configuring, or if necessary, modifying the XML parser in order to apply one or more of these strategies:
+● Enforce a timeout to prevent delaying or very large data volume attacks. 
+● Limit the type and amount of data that can be retrieved. 
+● Restrict the XmlResolver from retrieving resources on the local host.
